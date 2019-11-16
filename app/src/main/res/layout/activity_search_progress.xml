@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.ljhnas.medistation.view.search_progress.SearchProgressViewModel" />
+            type="com.ljhnas.medistation.view.search_progress.models.SearchProgressViewModel" />
 
         <variable
             name="activity"

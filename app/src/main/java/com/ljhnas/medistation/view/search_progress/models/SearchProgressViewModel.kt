@@ -1,4 +1,4 @@
-package com.ljhnas.medistation.view.search_progress
+package com.ljhnas.medistation.view.search_progress.models
 
 import android.app.Activity
 import android.content.Context

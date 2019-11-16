@@ -13,7 +13,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.ljhnas.medistation.databinding.ActivitySearchProgressBinding
-import com.ljhnas.medistation.view.search_progress.SearchProgressViewModel
+import com.ljhnas.medistation.view.search_progress.models.SearchProgressViewModel
 import kotlinx.android.synthetic.main.activity_search_progress.*
 
 
