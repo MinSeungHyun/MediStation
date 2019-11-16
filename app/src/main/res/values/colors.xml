@@ -6,5 +6,5 @@
 
     <color name="colorSecondary">#4263eb</color>
     <color name="colorGrayBackground">#F2F2F2</color>
-    <color name="errorColor">#FF2424</color>
+    <color name="errorColor">#FF1E3C</color>
 </resources>
