@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.register.RegisterActivity" />
+        <activity
+            android:name=".view.register.RegisterActivity"
+            android:theme="@style/RegisterActivityTheme" />
     </application>
 
 </manifest>
