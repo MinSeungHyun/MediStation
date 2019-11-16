@@ -50,8 +50,8 @@ class SearchProgressActivity : AppCompatActivity() {
         adapter.enableForegroundDispatch(this, pendingIntent, arrayOf(intentFilter), techList)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onPause() {
+        super.onPause()
         nfcAdapter.disableForegroundDispatch(this)
     }
 
