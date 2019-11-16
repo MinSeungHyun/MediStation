@@ -70,7 +70,9 @@ class SearchProgressActivity : AppCompatActivity() {
         Log.d("testing", "reading")
 
         val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG) ?: return
-        Log.d("testing", byteArrayToHexString(tag.id))
+        val uid = byteArrayToHexString(tag.id)
+        Log.d("testing", uid)
+        viewModel.requestNfcUid(uid)
     }
 
     private fun byteArrayToHexString(inArray: ByteArray): String {

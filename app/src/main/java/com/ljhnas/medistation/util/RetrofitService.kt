@@ -14,4 +14,7 @@ interface RetrofitService {
 
     @POST("/user/login")
     fun login(@Body param: HashMap<String, String>): Call<RequestSuccess>
+
+    @POST("/berry/send")
+    fun requestNfc(@Body param: HashMap<String, String>): Call<RequestSuccess>
 }
