@@ -21,6 +21,5 @@
         <item name="android:background">?attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:focusableInTouchMode">true</item>
     </style>
 </resources>
