@@ -21,6 +21,12 @@ class LoginViewModel(private val context: Activity) {
     val email by lazy { ObservableField<String>().apply { set("") } }
     val password by lazy { ObservableField<String>().apply { set("") } }
 
+    init {
+        val preference = context.getPreferences(Context.MODE_PRIVATE)
+        email.set(preference.getString("id", ""))
+        password.set(preference.getString("pw", ""))
+    }
+
     private val retrofitService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
