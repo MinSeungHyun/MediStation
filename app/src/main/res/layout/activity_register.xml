@@ -20,9 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorGrayBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         android:orientation="vertical"
         tools:ignore="ContentDescription">
 
@@ -76,110 +73,270 @@
             app:layout_constraintBottom_toTopOf="@id/illustration"
             app:layout_constraintTop_toBottomOf="@id/logoTextImage">
 
-            <ScrollView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
+                android:layout_height="match_parent">
 
-                <LinearLayout
+                <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:animateLayoutChanges="true"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:orientation="vertical"
-                    android:padding="36dp">
+                    android:layout_gravity="center"
+                    android:paddingBottom="120dp"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="36dp"
-                        android:shadowColor="#45000000"
-                        android:shadowDx="4"
-                        android:shadowDy="4"
-                        android:shadowRadius="6"
-                        android:text="@string/register"
-                        android:textColor="@android:color/black"
-                        android:textSize="32sp"
-                        android:textStyle="bold" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/emailTextInputLayout"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/email">
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:padding="36dp">
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="textEmailAddress"
-                            android:text="@={vm.email}" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:visibility="@{vm.currentStage==0 ? View.VISIBLE : View.GONE}">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/passwordTextInputLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="@string/password">
+                            <TextView
+                                style="@style/PrimaryTitleTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="36dp"
+                                android:text="@string/register" />
 
-                        <com.google.android.material.textfield.TextInputEditText
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/emailTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/email">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="textEmailAddress"
+                                    android:text="@={vm.email}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/passwordTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/password">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="textPassword"
+                                    android:text="@={vm.password}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/nameTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="text"
+                                    android:text="@={vm.name}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/birthTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/birth">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/birthEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="date"
+                                    android:text="@{vm.birthString}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/submit_error"
+                                android:textColor="@color/errorColor"
+                                android:visibility="@{vm.isInvalid?View.VISIBLE:View.GONE}" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="textPassword"
-                            android:text="@={vm.password}" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="@{vm.currentStage==1 ? View.VISIBLE : View.GONE}">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/nameTextInputLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="@string/name">
+                            <TextView
+                                style="@style/PrimaryTitleTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/enter_gender" />
 
-                        <com.google.android.material.textfield.TextInputEditText
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="36dp"
+                                android:gravity="center">
+
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@={!vm.isFemale}"
+                                    android:text="@string/male" />
+
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@={vm.isFemale}"
+                                    android:text="@string/female" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="text"
-                            android:text="@={vm.name}" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="@{vm.currentStage==2 ? View.VISIBLE : View.GONE}">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/birthTextInputLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="36dp"
-                        android:hint="@string/birth">
+                            <TextView
+                                style="@style/PrimaryTitleTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/isPregnant" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/birthEditText"
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="36dp"
+                                android:gravity="center">
+
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@={vm.isPregnant[1]}"
+                                    android:text="@string/pregnant" />
+
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@={vm.isPregnant[2]}"
+                                    android:text="@string/lactating" />
+
+                                <RadioButton
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@={vm.isPregnant[0]}"
+                                    android:text="@string/no" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:inputType="date"
-                            android:text="@{vm.birthString}" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="@{vm.currentStage==3 ? View.VISIBLE : View.GONE}">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/submit_error"
-                        android:textColor="@color/errorColor"
-                        android:visibility="@{vm.isInvalid?View.VISIBLE:View.GONE}" />
+                            <TextView
+                                style="@style/PrimaryTitleTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="36dp"
+                                android:text="@string/enter_disease" />
 
-                    <Button
-                        style="@style/PrimaryButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/button_ripple"
-                        android:backgroundTint="@color/colorPrimary"
-                        android:onClick="@{()->vm.onRegisterButtonClick()}"
-                        android:text="@string/register"
-                        android:textColor="@android:color/white" />
-                </LinearLayout>
-            </ScrollView>
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[0]}"
+                                android:text="@string/no_disease" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[1]}"
+                                android:text="@string/high_blood_pressure" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[2]}"
+                                android:text="@string/diabetes" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="@{vm.currentStage==4 ? View.VISIBLE : View.GONE}">
+
+                            <TextView
+                                style="@style/PrimaryTitleTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="36dp"
+                                android:text="@string/eating_medicines" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[0]}"
+                                android:text="@string/no_medicine" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[1]}"
+                                android:text="@string/diabetes_medicine" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[2]}"
+                                android:text="@string/heart_medicine" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/nextButton"
+                    style="@style/PrimaryButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/button_ripple"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="@{()->vm.onNextButtonClick()}"
+                    android:text="@{vm.currentStage == 4 ? `회원가입` : `다음`}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <ImageView

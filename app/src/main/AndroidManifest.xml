@@ -23,6 +23,7 @@
         </activity>
 
         <activity
+            android:windowSoftInputMode="adjustNothing"
             android:name=".view.register.RegisterActivity"
             android:theme="@style/RegisterActivityTheme" />
     </application>
