@@ -40,7 +40,7 @@
             android:theme="@style/MainActivityTheme" />
 
         <activity
-            android:name=".view.search_progress.SearchProgressActivity"
+            android:name=".view.search_progress.activities.SearchProgressActivity"
             android:theme="@style/ProgressActivityTheme">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
@@ -52,7 +52,7 @@
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
         <activity
-            android:name=".view.search_progress.ResultNegativeActivity"
+            android:name=".view.search_progress.activities.ResultNegativeActivity"
             android:theme="@style/ResultNegativeActivityTheme" />
     </application>
 

@@ -1,4 +1,4 @@
-package com.ljhnas.medistation.view.search_progress
+package com.ljhnas.medistation.view.search_progress.activities
 
 import android.app.PendingIntent
 import android.content.Intent
@@ -13,6 +13,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.ljhnas.medistation.databinding.ActivitySearchProgressBinding
+import com.ljhnas.medistation.view.search_progress.SearchProgressViewModel
 import kotlinx.android.synthetic.main.activity_search_progress.*
 
 

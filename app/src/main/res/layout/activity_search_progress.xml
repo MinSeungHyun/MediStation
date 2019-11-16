@@ -13,7 +13,7 @@
 
         <variable
             name="activity"
-            type="com.ljhnas.medistation.view.search_progress.SearchProgressActivity" />
+            type="com.ljhnas.medistation.view.search_progress.activities.SearchProgressActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

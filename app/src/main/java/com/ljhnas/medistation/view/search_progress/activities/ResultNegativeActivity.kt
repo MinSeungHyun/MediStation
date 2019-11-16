@@ -1,4 +1,4 @@
-package com.ljhnas.medistation.view.search_progress
+package com.ljhnas.medistation.view.search_progress.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
