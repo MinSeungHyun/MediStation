@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="activity"
+            type="com.ljhnas.medistation.view.register.RegisterActivity" />
+
+        <variable
             name="vm"
             type="com.ljhnas.medistation.view.register.RegisterViewModel" />
     </data>
@@ -27,6 +31,7 @@
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
+            android:onClick="@{()->activity.finish()}"
             android:padding="4dp"
             android:src="@drawable/ic_arrow_back_ios_24px"
             android:tint="@color/colorPrimary"
@@ -155,7 +160,7 @@
                         android:layout_marginTop="36dp"
                         android:background="@drawable/button_ripple"
                         android:backgroundTint="@color/colorPrimary"
-                        android:onClick="@{vm.onRegisterButtonClick()}"
+                        android:onClick="@{()->vm.onRegisterButtonClick()}"
                         android:text="@string/register"
                         android:textColor="@android:color/white" />
                 </LinearLayout>
