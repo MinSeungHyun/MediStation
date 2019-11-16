@@ -29,7 +29,10 @@
             android:name=".view.register.RegisterActivity"
             android:theme="@style/RegisterActivityTheme"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".view.main.MainActivity" />
+
+        <activity
+            android:name=".view.main.MainActivity"
+            android:theme="@style/MainActivityTheme" />
     </application>
 
 </manifest>

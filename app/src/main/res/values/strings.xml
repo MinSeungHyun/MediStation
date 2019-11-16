@@ -27,4 +27,6 @@
     <string name="heart_medicine">심장약을 복용중이에요</string>
     <string name="registered">회원가입 되었습니다!</string>
     <string name="request_failed">실패했습니다. 잠시 후 다시 시도해 주세요.</string>
+    <string name="take_picture_to_search">기기에 약을 인식시켜\n성분을 검색해보세요.</string>
+    <string name="search">검색하기</string>
 </resources>
