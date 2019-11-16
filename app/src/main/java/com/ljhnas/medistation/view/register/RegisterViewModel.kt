@@ -1,10 +1,20 @@
 package com.ljhnas.medistation.view.register
 
 import android.app.Activity
+import android.widget.Toast
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.databinding.ObservableInt
+import com.ljhnas.medistation.R
+import com.ljhnas.medistation.model.RequestSuccess
+import com.ljhnas.medistation.util.BASE_URL
+import com.ljhnas.medistation.util.RetrofitService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RegisterViewModel(private val context: Activity) {
     val email: ObservableField<String> by lazy { ObservableField<String>() }
@@ -37,6 +47,14 @@ class RegisterViewModel(private val context: Activity) {
     val isInvalid: ObservableBoolean by lazy { ObservableBoolean().apply { set(false) } }
     val currentStage: ObservableInt by lazy { ObservableInt().apply { set(0) } }
 
+    private val retrofitService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(RetrofitService::class.java)
+    }
+
     fun onNextButtonClick() {
         val email = email.get()
         val password = password.get()
@@ -49,7 +67,7 @@ class RegisterViewModel(private val context: Activity) {
         isInvalid.set(false)
 
         if (currentStage.get() == 4) {
-            val isFemale = if (isFemale.get()) "1" else "0"
+            val gender = if (isFemale.get()) "1" else "0"
             val isPregnant = !isPregnant[0]
             val allergy = ArrayList<String>()
             if (diseases[1]) allergy.add("고혈압")
@@ -57,6 +75,21 @@ class RegisterViewModel(private val context: Activity) {
             val medicine = ArrayList<String>()
             if (takingMedicines[1]) medicine.add("당뇨약")
             if (takingMedicines[2]) medicine.add("심장약")
+
+            val requestModel = UserRegisterModel(email, password, name, birth, allergy, medicine, gender, isPregnant)
+            retrofitService.requestRegister(requestModel)
+                .enqueue(object : Callback<RequestSuccess> {
+                    override fun onFailure(call: Call<RequestSuccess>, t: Throwable) {
+                        t.printStackTrace()
+                    }
+
+                    override fun onResponse(call: Call<RequestSuccess>, response: Response<RequestSuccess>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(context, R.string.registered, Toast.LENGTH_LONG).show()
+                            context.finish()
+                        }
+                    }
+                })
         } else {
             currentStage.set(currentStage.get() + 1)
         }
