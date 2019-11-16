@@ -88,6 +88,8 @@ class RegisterViewModel(private val context: Activity) {
                         if (response.isSuccessful) {
                             Toast.makeText(context, R.string.registered, Toast.LENGTH_LONG).show()
                             context.finish()
+                        } else {
+                            Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show()
                         }
                     }
                 })
