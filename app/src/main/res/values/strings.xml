@@ -50,4 +50,6 @@
     <string name="progress_description_1">메디스테이션 기기에서\n약을 인식시키세요.</string>
     <string name="progress_description_2">휴대폰을 메디스테이션의\n윗면에 가져다 대세요.</string>
     <string name="progress_description_2_detail">휴대폰이 인식되면 자동으로 결과가 뜹니다.</string>
+
+    <string name="dont_take">복용하면 안돼요!</string>
 </resources>

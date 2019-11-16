@@ -30,6 +30,10 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="ResultNegativeActivityTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/errorColor</item>
+    </style>
+
     <style name="TextButtonStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

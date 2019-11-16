@@ -1,0 +1,11 @@
+<svg height="44.478" viewBox="0 0 52.327 44.478" width="52.327" xmlns="http://www.w3.org/2000/svg">
+    <g id="home-button" transform="translate(0 -38.25)">
+        <g data-name="그룹 20" id="그룹_20" transform="translate(0 38.25)">
+            <g id="home" transform="translate(0 0)">
+                <path
+                    d="M20.931,82.728V67.03H31.4v15.7H44.478V61.8h7.849L26.164,38.25,0,61.8H7.849V82.728Z"
+                    data-name="패스 24" fill="#fff" id="패스_24" transform="translate(0 -38.25)" />
+            </g>
+        </g>
+    </g>
+</svg>

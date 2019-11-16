@@ -51,6 +51,9 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
+        <activity
+            android:name=".view.search_progress.ResultNegativeActivity"
+            android:theme="@style/ResultNegativeActivityTheme" />
     </application>
 
 </manifest>
