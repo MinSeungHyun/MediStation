@@ -9,4 +9,5 @@
     <string name="name">이름</string>
     <string name="birth">생년월일</string>
     <string name="birth_text_format">%04d-%02d-%02d</string>
+    <string name="submit_error">모든 칸에 입력해주세요.</string>
 </resources>
