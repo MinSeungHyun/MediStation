@@ -1,6 +1,7 @@
 package com.ljhnas.medistation.view.login
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.databinding.ObservableField
@@ -42,6 +43,7 @@ class LoginViewModel(private val context: Activity) {
 
                 override fun onResponse(call: Call<RequestSuccess>, response: Response<RequestSuccess>) {
                     if (response.body()?.success == true) {
+                        saveIdPw()
                         context.startActivity(Intent(context, MainActivity::class.java))
                         context.finish()
                     } else {
@@ -50,4 +52,11 @@ class LoginViewModel(private val context: Activity) {
                 }
             })
     }
+
+    private fun saveIdPw() =
+        with(context.getPreferences(Context.MODE_PRIVATE).edit()) {
+            putString("id", email.get())
+            putString("pw", password.get())
+            apply()
+        }
 }
