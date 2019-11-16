@@ -81,6 +81,7 @@ class RegisterViewModel(private val context: Activity) {
                 .enqueue(object : Callback<RequestSuccess> {
                     override fun onFailure(call: Call<RequestSuccess>, t: Throwable) {
                         t.printStackTrace()
+                        Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show()
                     }
 
                     override fun onResponse(call: Call<RequestSuccess>, response: Response<RequestSuccess>) {
