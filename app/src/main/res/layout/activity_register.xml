@@ -103,7 +103,9 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:inputType="textEmailAddress"
+                            android:text="@={vm.email}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -114,7 +116,9 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:inputType="textPassword"
+                            android:text="@={vm.password}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -125,7 +129,9 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            android:text="@={vm.name}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -149,6 +155,7 @@
                         android:layout_marginTop="36dp"
                         android:background="@drawable/button_ripple"
                         android:backgroundTint="@color/colorPrimary"
+                        android:onClick="@{vm.onRegisterButtonClick()}"
                         android:text="@string/register"
                         android:textColor="@android:color/white" />
                 </LinearLayout>
