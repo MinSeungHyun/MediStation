@@ -18,7 +18,10 @@ class RegisterActivity : AppCompatActivity() {
         viewModel = RegisterViewModel(this)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register)
-        binding.vm = viewModel
+        binding.apply {
+            vm = viewModel
+            activity = this@RegisterActivity
+        }
 
         birthEditText.setOnFocusChangeListener { _, hasFocus ->
             birthEditText.clearFocus()
