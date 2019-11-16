@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity"
     tools:ignore="ContentDescription">
 
@@ -78,6 +81,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/button_ripple"
+        android:focusableInTouchMode="true"
         android:text="@string/login"
         android:textColor="@color/colorSecondary"
         android:textSize="14sp"
