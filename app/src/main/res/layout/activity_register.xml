@@ -240,7 +240,7 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:orientation="vertical"
                             android:visibility="@{vm.currentStage==3 ? View.VISIBLE : View.GONE}">
 
@@ -252,22 +252,64 @@
                                 android:text="@string/enter_disease" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="@={vm.diseases[0]}"
                                 android:text="@string/no_disease" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="@={vm.diseases[1]}"
                                 android:text="@string/high_blood_pressure" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="@={vm.diseases[2]}"
                                 android:text="@string/diabetes" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[3]}"
+                                android:text="@string/hyperlipidemia" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[4]}"
+                                android:text="@string/kidney_disease" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[5]}"
+                                android:text="@string/liver_disease" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[6]}"
+                                android:text="@string/cancer" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[7]}"
+                                android:text="@string/urinary" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[8]}"
+                                android:text="@string/mental_illness" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.diseases[9]}"
+                                android:text="@string/etc" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -275,7 +317,7 @@
                             android:layout_height="0dp"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:gravity="center"
+                            android:gravity="center_vertical"
                             android:orientation="vertical"
                             android:visibility="@{vm.currentStage==4 ? View.VISIBLE : View.GONE}">
 
@@ -287,22 +329,70 @@
                                 android:text="@string/eating_medicines" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="@={vm.takingMedicines[0]}"
                                 android:text="@string/no_medicine" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:checked="@={vm.takingMedicines[1]}"
+                                android:text="@string/painkiller_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[2]}"
+                                android:text="@string/cold_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[3]}"
+                                android:text="@string/antibiotic_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[4]}"
+                                android:text="@string/stomach_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[5]}"
+                                android:text="@string/blood_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[6]}"
                                 android:text="@string/diabetes_medicine" />
 
                             <CheckBox
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:checked="@={vm.takingMedicines[2]}"
-                                android:text="@string/heart_medicine" />
+                                android:checked="@={vm.takingMedicines[7]}"
+                                android:text="@string/osteoporosis_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[8]}"
+                                android:text="@string/sleep_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[9]}"
+                                android:text="@string/anemia_medicine" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="@={vm.takingMedicines[10]}"
+                                android:text="@string/etc" />
                         </LinearLayout>
                     </LinearLayout>
                 </ScrollView>

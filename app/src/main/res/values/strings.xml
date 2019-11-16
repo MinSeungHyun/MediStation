@@ -17,14 +17,31 @@
     <string name="no">아니요</string>
     <string name="pregnant">임산부에요</string>
     <string name="lactating">수유부에요</string>
+
     <string name="enter_disease">어떤 질환을 가지고 있나요?</string>
     <string name="no_disease">질환이 없어요</string>
     <string name="high_blood_pressure">고혈압</string>
     <string name="diabetes">당뇨</string>
+    <string name="hyperlipidemia">고지혈증</string>
+    <string name="kidney_disease">신장질환</string>
+    <string name="liver_disease">간질환</string>
+    <string name="cancer">암</string>
+    <string name="urinary">비뇨기/산부인과</string>
+    <string name="mental_illness">정신질환</string>
+    <string name="etc">기타</string>
+
     <string name="eating_medicines">어떤 약을 복용 중이신가요?</string>
     <string name="no_medicine">복용중인 약이 없어요</string>
-    <string name="diabetes_medicine">당뇨약을 복용중이에요</string>
-    <string name="heart_medicine">심장약을 복용중이에요</string>
+    <string name="painkiller_medicine">진통제</string>
+    <string name="cold_medicine">감기약</string>
+    <string name="antibiotic_medicine">항생제</string>
+    <string name="stomach_medicine">위장약</string>
+    <string name="blood_medicine">혈압약</string>
+    <string name="diabetes_medicine">당뇨약</string>
+    <string name="osteoporosis_medicine">골다공증약</string>
+    <string name="sleep_medicine">수면제</string>
+    <string name="anemia_medicine">빈혈약</string>
+
     <string name="registered">회원가입 되었습니다!</string>
     <string name="request_failed">실패했습니다. 잠시 후 다시 시도해 주세요.</string>
     <string name="take_picture_to_search">기기에 약을 인식시켜\n성분을 검색해보세요.</string>

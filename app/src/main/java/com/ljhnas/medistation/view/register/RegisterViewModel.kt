@@ -1,6 +1,7 @@
 package com.ljhnas.medistation.view.register
 
 import android.app.Activity
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableBoolean
@@ -15,6 +16,33 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
+private val diseasesList = listOf(
+    "없음", //0
+    "고혈압",
+    "당뇨",
+    "고지혈증",
+    "신장질환",
+    "간질환",
+    "암",
+    "비뇨기/산부인과",
+    "정신질환",
+    "기타" //9
+)
+
+private val medicineList = listOf(
+    "없음", //0
+    "진통제",
+    "감기약",
+    "항생제",
+    "위장약",
+    "혈압약",
+    "당뇨약",
+    "골다공중약",
+    "수면제",
+    "빈혈제",
+    "기타" //10
+)
 
 class RegisterViewModel(private val context: Activity) {
     val email: ObservableField<String> by lazy { ObservableField<String>() }
@@ -31,16 +59,18 @@ class RegisterViewModel(private val context: Activity) {
     }
     val diseases: ObservableArrayList<Boolean> by lazy {
         ObservableArrayList<Boolean>().apply {
-            add(true) //no
-            add(false) //고혈압
-            add(false) //당뇨
+            add(true)
+            repeat(9) {
+                add(false)
+            }
         }
     }
     val takingMedicines: ObservableArrayList<Boolean> by lazy {
         ObservableArrayList<Boolean>().apply {
-            add(true) //no
-            add(false) //당뇨약
-            add(false) //심작약
+            add(true)
+            repeat(10) {
+                add(false)
+            }
         }
     }
 
@@ -70,11 +100,20 @@ class RegisterViewModel(private val context: Activity) {
             val gender = if (isFemale.get()) "1" else "0"
             val isPregnant = !isPregnant[0]
             val allergy = ArrayList<String>()
-            if (diseases[1]) allergy.add("고혈압")
-            if (diseases[2]) allergy.add("당뇨")
+            diseases.forEachIndexed { index, b ->
+                if (!(index == 0 || index == 9) && b) {
+                    allergy.add(diseasesList[index])
+                }
+            }
             val medicine = ArrayList<String>()
-            if (takingMedicines[1]) medicine.add("당뇨약")
-            if (takingMedicines[2]) medicine.add("심장약")
+            takingMedicines.forEachIndexed { index, b ->
+                if (!(index == 0 || index == 10) && b) {
+                    medicine.add(medicineList[index])
+                }
+            }
+
+            Log.d("testing", allergy.toString())
+            Log.d("testing", medicine.toString())
 
             val requestModel = UserRegisterModel(email, password, name, birth, allergy, medicine, gender, isPregnant)
             retrofitService.requestRegister(requestModel)
