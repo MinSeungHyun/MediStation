@@ -33,6 +33,10 @@
         <activity
             android:name=".view.main.MainActivity"
             android:theme="@style/MainActivityTheme" />
+
+        <activity
+            android:name=".view.search_progress.SearchProgressActivity"
+            android:theme="@style/ProgressActivityTheme" />
     </application>
 
 </manifest>
