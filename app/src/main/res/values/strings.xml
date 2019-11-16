@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MediStation</string>
+    <string name="app_name">Medi Station</string>
+
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
+    <string name="find_password">비밀번호 찾기</string>
 </resources>
