@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
             if (!hasFocus) return@setOnFocusChangeListener
             DatePickerDialog(this@RegisterActivity).apply {
                 setOnDateSetListener { _, year, month, dayOfMonth ->
-                    viewModel.birthString.set(getString(R.string.birth_text_format).format(year, month, dayOfMonth))
+                    viewModel.birthString.set(getString(R.string.birth_text_format).format(year, month + 1, dayOfMonth))
                 }
                 show()
             }
