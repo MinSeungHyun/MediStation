@@ -34,32 +34,18 @@
             android:padding="4dp"
             android:src="@drawable/ic_arrow_back_ios_24px"
             android:tint="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="@id/logoTextImage"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/logoTextImage" />
+            app:layout_constraintTop_toTopOf="@id/logo" />
 
-        <ImageView
-            android:id="@+id/logoImage"
+        <include
+            android:id="@+id/logo"
+            layout="@layout/logo_title"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/meditation_logo_green"
-            app:layout_constraintBottom_toBottomOf="@id/logoTextImage"
-            app:layout_constraintEnd_toStartOf="@id/logoTextImage"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/logoTextImage" />
-
-        <ImageView
-            android:id="@+id/logoTextImage"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/medistation_text_green"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/logoImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
@@ -71,7 +57,7 @@
             android:layout_marginBottom="20dp"
             app:cardElevation="4dp"
             app:layout_constraintBottom_toTopOf="@id/illustration"
-            app:layout_constraintTop_toBottomOf="@id/logoTextImage">
+            app:layout_constraintTop_toBottomOf="@id/logo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

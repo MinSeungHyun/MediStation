@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/meditation_logo_green" />
+
+    <ImageView
+        android:id="@+id/logoTextImage"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/medistation_text_green" />
+</LinearLayout>
