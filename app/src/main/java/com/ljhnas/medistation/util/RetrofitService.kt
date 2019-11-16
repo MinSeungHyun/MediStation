@@ -11,4 +11,7 @@ const val BASE_URL = "http://medistation.ljhnas.com"
 interface RetrofitService {
     @POST("/user/register")
     fun requestRegister(@Body param: UserRegisterModel): Call<RequestSuccess>
+
+    @POST("/user/login")
+    fun login(@Body param: HashMap<String, String>): Call<RequestSuccess>
 }

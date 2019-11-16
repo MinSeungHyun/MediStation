@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.ljhnas.medistation.R
 import com.ljhnas.medistation.databinding.ActivityLoginBinding
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel: LoginViewModel
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -26,4 +26,5 @@
     <string name="diabetes_medicine">당뇨약을 복용중이에요</string>
     <string name="heart_medicine">심장약을 복용중이에요</string>
     <string name="registered">회원가입 되었습니다!</string>
+    <string name="request_failed">실패했습니다. 잠시 후 다시 시도해 주세요.</string>
 </resources>
