@@ -2,12 +2,15 @@ package com.ljhnas.medistation.view.search_progress.models
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.ObservableInt
 import com.ljhnas.medistation.R
-import com.ljhnas.medistation.model.RequestSuccess
 import com.ljhnas.medistation.util.BASE_URL
 import com.ljhnas.medistation.util.RetrofitService
+import com.ljhnas.medistation.view.search_progress.activities.ResultNegativeActivity
+import com.ljhnas.medistation.view.search_progress.activities.ResultPositiveActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,15 +37,22 @@ class SearchProgressViewModel(private val context: Activity) {
     fun requestNfcUid(uid: String) {
         val id = context.getPreferences(Context.MODE_PRIVATE).getString("id", "")!!
         retrofitService.requestNfc(hashMapOf("id" to id, "uid" to uid))
-            .enqueue(object : Callback<RequestSuccess> {
-                override fun onFailure(call: Call<RequestSuccess>, t: Throwable) {
+            .enqueue(object : Callback<SearchResult> {
+                override fun onFailure(call: Call<SearchResult>, t: Throwable) {
                     t.printStackTrace()
                     Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<RequestSuccess>, response: Response<RequestSuccess>) {
-                    if (response.body()?.success == true) {
-                        Toast.makeText(context, response.message(), Toast.LENGTH_LONG).show()
+                override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) {
+                    val body = response.body()!!
+                    if (body.success) {
+                        Log.d("testing", "${body.eatable}, ${body.name}")
+                        val intent =
+                            if (body.eatable) Intent(context, ResultPositiveActivity::class.java).apply {
+                                putExtra("medicineName", body.name)
+                            }
+                            else Intent(context, ResultNegativeActivity::class.java)
+                        context.startActivity(intent)
                     } else {
                         Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show()
                     }

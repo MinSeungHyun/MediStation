@@ -2,6 +2,7 @@ package com.ljhnas.medistation.util
 
 import com.ljhnas.medistation.model.RequestSuccess
 import com.ljhnas.medistation.view.register.UserRegisterModel
+import com.ljhnas.medistation.view.search_progress.models.SearchResult
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -16,5 +17,5 @@ interface RetrofitService {
     fun login(@Body param: HashMap<String, String>): Call<RequestSuccess>
 
     @POST("/berry/send")
-    fun requestNfc(@Body param: HashMap<String, String>): Call<RequestSuccess>
+    fun requestNfc(@Body param: HashMap<String, String>): Call<SearchResult>
 }
