@@ -53,4 +53,9 @@
 
     <string name="dont_take">복용하면 안돼요!</string>
     <string name="safe">복용해도 안전합니다!</string>
+    <string name="show_medicine_info">+ 약 정보 더보기</string>
+    <string name="protect_method">보관 방법</string>
+    <string name="symptom">증상</string>
+    <string name="take_info">복용 정보</string>
+    <string name="caution">주의사항</string>
 </resources>

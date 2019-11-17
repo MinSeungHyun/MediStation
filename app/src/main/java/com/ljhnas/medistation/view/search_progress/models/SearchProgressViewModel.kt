@@ -46,10 +46,10 @@ class SearchProgressViewModel(private val context: Activity) {
                 override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) {
                     val body = response.body()!!
                     if (body.success) {
-                        Log.d("testing", "${body.eatable}, ${body.name}")
+                        Log.d("testing", "${body.eatable}, ${body.id}")
                         val intent =
                             if (body.eatable) Intent(context, ResultPositiveActivity::class.java).apply {
-                                putExtra("medicineName", body.name)
+                                putExtra("medicineID", body.id)
                             }
                             else Intent(context, ResultNegativeActivity::class.java)
                         context.startActivity(intent)
