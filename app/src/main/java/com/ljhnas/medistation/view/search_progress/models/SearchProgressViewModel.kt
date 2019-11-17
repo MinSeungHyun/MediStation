@@ -53,6 +53,7 @@ class SearchProgressViewModel(private val context: Activity) {
                             }
                             else Intent(context, ResultNegativeActivity::class.java)
                         context.startActivity(intent)
+                        context.finish()
                     } else {
                         Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show()
                     }
