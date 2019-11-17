@@ -52,4 +52,5 @@
     <string name="progress_description_2_detail">휴대폰이 인식되면 자동으로 결과가 뜹니다.</string>
 
     <string name="dont_take">복용하면 안돼요!</string>
+    <string name="safe">복용해도 안전합니다!</string>
 </resources>
